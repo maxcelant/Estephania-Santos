@@ -4,12 +4,15 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, orderBy, limit, startAfter } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { MoonLoader } from 'react-spinners';
+import VisibilitySensor from 'react-visibility-sensor';
+
 import PhotoItem from '../components/PhotoItem';
 
 function Home() {
 
   const [ photos, setPhotos ] = useState(null);
   const [ loading, setLoading ] = useState(true);
+  const [imagesShownArray, setImagesShownArray] = useState([]);
   const isMounted = useRef(true);
   const params = useParams();
 
@@ -40,6 +43,7 @@ function Home() {
                 })
                 setPhotos(photos)
                 setLoading(false)
+                setImagesShownArray(Array(photos.length).fill(false))
             } catch (e) {
                 console.log(e)
             }
@@ -57,10 +61,28 @@ function Home() {
             </div>  
   }
 
+  const imageVisibleChange = (index, isVisible) => {
+    if (isVisible) {
+      setImagesShownArray((currentImagesShownArray) => {
+        currentImagesShownArray[index] = true;
+        return [...currentImagesShownArray];
+      });
+    }
+  };
+
   return (
     <div className='flex flex-wrap justify-center'>
-      {photos.map((photo) => (
-          <PhotoItem key={photo.id} photo={photo.data} id={photo.id}/>
+      {photos.map((photo, index) => (
+          <VisibilitySensor
+            key={index}
+            partialVisibility={true}
+            offset={{bottom: 80}}
+            onChange={(isVisible) => imageVisibleChange(index, isVisible)}
+          >
+          {({isVisible}) => (
+            <PhotoItem key={photo.id} photo={photo.data} id={photo.id} show={imagesShownArray[index]}/>  
+          )}
+          </VisibilitySensor>
       ))}
     </div>
   )
