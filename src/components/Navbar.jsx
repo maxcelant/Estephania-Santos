@@ -19,7 +19,7 @@ function Navbar() {
   const setNavbarState = () => setNavbarOpen(!navbarOpen);
 
   return (
-    <nav className="sticky top-0 flex items-center justify-around flex-wrap bg-white/90 p-8 shadow-lg">
+    <nav className="sticky top-0 flex items-center justify-around flex-wrap bg-white/90 p-8 shadow-lg z-20">
         <div className="relative container mx-auto max-w-md">
             { navbarOpen ? 
                 (<GiHamburgerMenu className="absolute right-2 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)
