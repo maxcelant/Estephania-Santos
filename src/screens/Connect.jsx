@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
+import { send } from 'emailjs-com';
 
 const initialMessageState = {
-  name: '',
-  phoneNumber: '',
-  email: '',
+  to_name: 'Estephania Santos',
+  from_name: '',
+  phone_number: '',
+  reply_to: '',
   message: ''
 }
+
+const serviceId = process.env.REACT_APP_SERVICE_ID
+const templateId = process.env.REACT_APP_TEMPLATE_ID
+const userId = process.env.REACT_APP_USER_ID
 
 function Connect() {
 
@@ -21,17 +27,30 @@ function Connect() {
   }
 
   const onSubmit = async (e) => {
-
+    e.preventDefault();
+    try {
+      send(
+        serviceId,
+        templateId,
+        message,
+        userId,
+      )
+      toast.success("Message Sent!");
+    } catch (e) {
+      console.log(e);
+      toast.error("Message could not be sent");
+    }
   }
 
   return (
     <div className='container mx-auto max-w-2xl p-5 mb-64'>
+      <div className='text-3xl ml-3 font-imfell'>Connect with Me</div>
       <form>
         <div className='p-2'>
           <input 
             type='text' 
-            id='name' 
-            value={message.name} 
+            id='from_name' 
+            value={message.from_name} 
             onChange={onChange} 
             maxLength='50' 
             minLength='1' 
@@ -44,8 +63,8 @@ function Connect() {
         <div className='p-2'>
           <input 
             type='tel' 
-            id='phoneNumber' 
-            value={message.phoneNumber} 
+            id='phone_number' 
+            value={message.phone_number} 
             onChange={onChange} 
             maxLength='50' 
             minLength='1' 
@@ -58,8 +77,8 @@ function Connect() {
         <div className='p-2'>
           <input 
             type='email' 
-            id='email' 
-            value={message.email} 
+            id='reply_to' 
+            value={message.reply_to} 
             onChange={onChange} 
             maxLength='50' 
             minLength='1' 
@@ -84,7 +103,7 @@ function Connect() {
           ></textarea>
         </div>
         <div className='flex justify-center'>
-          <button className='btn glass btn-md btn-wide btn-ghost'>Send</button>
+          <button onClick={onSubmit} className='btn glass btn-md btn-wide btn-ghost font-archivo'>Send</button>
         </div>
       </form>
     </div>

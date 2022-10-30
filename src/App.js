@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {Navbar, Footer} from './components';
 import { About, Connect, Gallery, Home, Photo, NotFound, Welcome } from './screens';
 import ScrollToTop from './hooks/ScrollToTop';
@@ -19,6 +20,7 @@ function App() {
           <Route path='/*' element={<NotFound/>} />
         </Routes>
         <Footer/>
+        <ToastContainer/>
     </BrowserRouter>
   );
 }
