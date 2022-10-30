@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import {Navbar, Footer} from './components';
-import { About, Connect, Gallery, Home, Image, NotFound, Welcome } from './screens';
+import { About, Connect, Gallery, Home, Photo, NotFound, Welcome } from './screens';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route path='/me' element={<About/>}/>
           <Route path='/connect' element={<Connect/>}/>
           <Route path='/gallery' element={<Gallery/>} />
-          <Route path='/gallery/:id' element={<Image/>} />
+          <Route path='/home/:photoId' element={<Photo/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
     </BrowserRouter>

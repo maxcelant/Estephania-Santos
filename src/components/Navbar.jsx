@@ -19,14 +19,14 @@ function Navbar() {
   const setNavbarState = () => setNavbarOpen(!navbarOpen);
 
   return (
-    <nav className="relative flex items-center justify-around flex-wrap bg-white p-8 shadow-lg">
-        <div className="container mx-auto max-w-md">
+    <nav className="sticky top-0 flex items-center justify-around flex-wrap bg-white/90 p-8 shadow-lg">
+        <div className="relative container mx-auto max-w-md">
             { navbarOpen ? 
-                (<GiHamburgerMenu className="absolute right-9 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)
+                (<GiHamburgerMenu className="absolute right-2 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)
                  : 
-                (<GiCancel className="absolute right-9 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)}
+                (<GiCancel className="absolute right-2 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)}
             <span 
-                 className="flex flex-shrink-0 justify-center font-imfell text-2xl noselect font-semibold text-black/70 hover:cursor-pointer transition ease-in-out hover:scale-105 duration-300"
+                 className="flex flex-shrink-0 justify-start lg:justify-center font-imfell text-2xl noselect font-semibold text-black/70 hover:cursor-pointer transition ease-in-out hover:scale-105 duration-300"
                  onClick={() => navigate('/home')}
                 >
                 <GiButterflyFlower className="mr-3 text-3xl"/>Estepania Santos
