@@ -16,6 +16,7 @@ function App() {
           <Route path='/home/:photoId' element={<Photo/>} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
+        <Footer/>
     </BrowserRouter>
   );
 }
