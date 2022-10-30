@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        imfell: ['IM Fell Double Pica'],
+        lora: ['Lora']
+      }
+    },
   },
   plugins: [require("daisyui")],
 }
