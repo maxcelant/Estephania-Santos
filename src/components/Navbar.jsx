@@ -1,9 +1,16 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { GiButterflyFlower, GiHamburgerMenu, GiCancel } from 'react-icons/gi'
 
 function Navbar() {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setNavbarOpen(false)
+    );
+  }, []);
 
   const setNavbarState = () => setNavbarOpen(!navbarOpen);
 
