@@ -6,8 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        archivo: ['Archivo'],
         imfell: ['IM Fell Double Pica'],
-        lora: ['Lora']
+        lora: ['Lora'],
+        nunito: ['Nunito Sans']
       }
     },
   },
