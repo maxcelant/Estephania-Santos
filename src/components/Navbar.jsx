@@ -11,6 +11,7 @@ function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   useEffect(() => {
+    setNavbarOpen(!navbarOpen);
     window.addEventListener(
       "resize",
       () => window.innerWidth < 960 && setNavbarOpen(true)
