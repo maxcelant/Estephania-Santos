@@ -69,14 +69,14 @@ return (
     <div className='absolute z-10 top-1/2 left-1/2 transform_position'>
       <div className='container p-1 w-screen'>
         <div className='text-4xl font-imfell text-center mb-10 text-white tracking-widest underline-offset-8 underline'>Estephania Santos</div>
-        <div className='grid grid-cols-3 gap-4 mx-3'>
-          <div className='container border-4 border-white'>
+        <div className='flex justify-center'>
+          <div className='mx-2 container border-4 border-white hover:cursor-pointer transition ease-in-out hover:text-gray-500 hover:scale-105 duration-300 w-64'>
             <div onClick={() => navigate('/gallery')} className='text-center font-medium text-md lg:text-xl font-lora  text-white p-2 bg-black/30'>GALLERY</div>
           </div>
-          <div className='container border-4 border-white'>
+          <div className='mx-2 container border-4 border-white hover:cursor-pointer transition ease-in-out hover:text-gray-500 hover:scale-105 duration-300 w-64'>
             <div onClick={() => navigate('/home')} className='text-center font-medium text-md lg:text-xl font-lora text-white p-2 bg-black/30'>HOME</div>
           </div>
-          <div className='container border-4 border-white'>
+          <div className='mx-2 container border-4 border-white hover:cursor-pointer transition ease-in-out hover:text-gray-500 hover:scale-105 duration-300 w-64'>
             <div onClick={() => navigate('/connect')} className='text-center font-medium text-md lg:text-xl font-lora text-white p-2 bg-black/30'>CONNECT</div>
           </div>
         </div>
