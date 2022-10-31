@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect, useRef} from 'react';
-import { useParams } from 'react-router-dom';
-import { collection, getDocs, query, orderBy, limit, startAfter } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { MoonLoader } from 'react-spinners';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -14,7 +13,6 @@ function Home() {
   const [ loading, setLoading ] = useState(true);
   const [imagesShownArray, setImagesShownArray] = useState([]);
   const isMounted = useRef(true);
-  const params = useParams();
 
   useEffect(() => {
     if(isMounted){

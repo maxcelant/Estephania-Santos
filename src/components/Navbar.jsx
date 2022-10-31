@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useLocation } from 'react-router-dom'
 
-import { GiButterflyFlower, GiHamburgerMenu, GiCancel } from 'react-icons/gi'
+import { GiHamburgerMenu, GiCancel } from 'react-icons/gi'
 
 function Navbar() {
 
@@ -32,10 +32,10 @@ function Navbar() {
                    : 
                   (<GiCancel className="absolute right-2 text-3xl lg:hidden text-gray-600/60 z-20 hover:cursor-pointer transition ease-in-out hover:text-black hover:scale-105 duration-300" onClick={setNavbarState}/>)}
               <span 
-                   className="flex flex-shrink-0 justify-start lg:justify-center font-imfell text-2xl noselect font-semibold text-black/70 hover:cursor-pointer transition ease-in-out hover:scale-105 duration-300"
+                   className="flex flex-shrink-0 justify-start lg:justify-center font-sacramento text-4xl noselect font-semibold text-black/70 hover:cursor-pointer transition ease-in-out hover:scale-105 duration-300"
                    onClick={() => navigate('/')}
                   >
-                  Estepania Santos
+                  Estephania Santos
               </span>
           </div>
           <div className={navbarOpen ? 'container mx-auto max-w-lg hidden' : 'container mx-auto max-w-lg'}>

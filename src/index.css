@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -19,4 +20,9 @@
 
 .transform_position {
   transform: translate(-50%, -50%);
+}
+
+.custom_size {
+  font-size: 2.75rem;
+  line-height: 1;
 }

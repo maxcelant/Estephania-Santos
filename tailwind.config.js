@@ -9,7 +9,8 @@ module.exports = {
         archivo: ['Archivo'],
         imfell: ['IM Fell Double Pica'],
         lora: ['Lora'],
-        nunito: ['Nunito Sans']
+        nunito: ['Nunito Sans'],
+        sacramento: ['Sacramento']
       }
     },
   },
