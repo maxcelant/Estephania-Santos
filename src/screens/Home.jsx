@@ -71,7 +71,7 @@ function Home() {
   };
 
   return (
-    <div className='flex flex-wrap justify-center'>
+    <div className='flex flex-wrap justify-center mt-2 lg:mt-5'>
       {photos.map((photo, index) => (
           <VisibilitySensor
             key={index}
