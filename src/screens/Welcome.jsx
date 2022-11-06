@@ -69,7 +69,7 @@ return (
     <div>
     <div className='absolute z-10 top-1/2 left-1/2 transform_position'>
       <div className='container p-1 w-screen'>
-        <div className='custom_size font-sacramento text-center mb-10 text-white tracking-widest underline-offset-8 underline'>Estephania Santos</div>
+        <div className='custom_size font-sacramento text-center mb-10 text-white tracking-widest '>Estephania Santos</div>
         <div className='flex justify-center'>
           <div className='shadow-lg mx-2 container border-4 border-white hover:cursor-pointer transition ease-in-out hover:text-gray-500 hover:scale-105 duration-300 w-64'>
             <div onClick={() => navigate('/gallery')} className='text-center font-medium text-md lg:text-xl font-lora  text-white p-2 bg-black/30'>GALLERY</div>
@@ -86,7 +86,7 @@ return (
     <Swiper modules={[Autoplay, EffectFade, Pagination, Navigation]} effect="fade" speed={4000} fadeEffect={{crossFade: true}} loop={true} slidesPerView={1} autoplay={{ delay: 4000, disableOnInteraction: false }} pagination={{ clickable: true }} navigation={true}>
        {photos.map((photo, index) => (
          <SwiperSlide key={index}>
-         <div className='w-full h-screen'>
+         <div className='w-full h-screen bg-black'>
            <img className='object-cover w-full h-full brightness-50' src={photo.data.photoUrl} alt=''/>
          </div>
          </SwiperSlide>
